@@ -1,0 +1,33 @@
+<div class="show_contents">
+  <div class="show_box">
+    <div class="show_header">
+      <h2 class="show_title"><%= @product.title %></h2>
+    </div>
+    <div class="show_product_box">
+      <div class="show_thumbnail">
+       <%= image_tag("#{@product.image_url}") %>
+      </div>
+    </div>
+    <div class="product_address">
+      <%= @product.address %>
+    </div>
+  </div>  
+  
+  <div class="show_index">
+    <ul class="review_form">
+    <%= form_for [@product, @review] do |f| %>
+      <li class="rate_list">
+        <%= f.label :rate, "評価" %>
+        <%= f.number_field :rate, class: "rate_form", placeholder: 1, min: 1, max: 10 %>
+      </li>
+      <li class="review_list">
+        <%= f.text_area :review, class: "text_form", placeholder: "レビューを書いてね", size: "30 * 10" %>
+      </li>
+        <div class="review_button">
+          <%= f.submit "送信", class: "review_button_submit" %>
+        </div>
+    <% end %>
+    </ul>
+  </div>
+  
+</div>

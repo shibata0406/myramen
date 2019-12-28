@@ -1,0 +1,31 @@
+<div class="search_contents">
+  <div class="search_box">
+    <div class="search_header">
+      <h2 class="search_title">検索する</h2>
+
+      <%= form_tag("/products/search", class: "search_section", method: :get) do %>
+        <input class="search_form" name="keyword" placeholder="店舗名で検索" type="text" value="">
+        <input class="search_button" type="submit" value="検索"></button>
+      <% end %>
+    </div>
+    
+    <% if @products.present? %>
+      <div class="products_box">
+        <% @products.each do |product| %>
+          <div class="product_box">
+            <a href="/products/<%= product.id %>">
+              <div class="thumbnail"><%= image_tag product.image_url %></div>
+              <div class="product_title"><p><%= product.title %></p></div>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p>「<%= params[:keyword] %>」に関するラーメンが見つかりませんでした。</p>
+      <p>別のキーワードで再度お探し下さい。</p>
+      
+    <% end %>
+    
+  </div>
+  
+</div>

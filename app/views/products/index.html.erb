@@ -1,0 +1,19 @@
+<div class="index_contents">
+  <div class="index_box">
+    <div class="index_header">
+      <h2 class="index_title">新着ラーメン一覧</h2>
+    </div>
+    <div class="products_box">
+      <% @products.each do |product| %>
+        <div class="product_box">
+          <a href="/products/<%= product.id %>">
+            <div class="thumbnail"><%= image_tag product.image_url %></div>
+            <div class="product_title"><p><%= product.title %></p></div>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+  <%= paginate(@products) %>
+</div>

@@ -1,0 +1,34 @@
+<div class="show_contents">
+  <div class="show_box">
+    <div class="show_header">
+      <h2 class="show_title"><%= @product.title %></h2>
+    </div>
+    <div class="show_product_box">
+      <div class="show_thumbnail">
+       <%= image_tag("#{@product.image_url}") %>
+      </div>
+    </div>
+    <div class="product_address">
+      <%= @product.address %>
+    </div>
+    <div class="review_new">
+      <a href="/products/<%= @product.id %>/reviews/new" class="btn-square">このラーメンを評価する</a>
+    </div>
+  </div>
+  
+  <div class="show_index">
+    <div class="show_index_header">
+     <h4>【みなさんの評価一覧】</h4>
+    </div>
+    <div class="reviews_index">
+      <% @product.reviews.each do |review| %>
+        <ul class="review_index">
+          <li><%= review.user.nickname %></li>
+          <p><%= review.review %></p>
+          
+        </ul>
+      <% end %>
+    </div>
+  </div>
+  
+</div>

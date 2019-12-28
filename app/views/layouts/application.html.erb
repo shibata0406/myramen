@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myapp1218</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="header">
+      <%= image_tag ("ramen_syouyu.png"), class: "ramen_img" %>
+      <a class="title" href="/">俺のラーメン</a>
+      <%= image_tag ("7605.png"), class: "ramen_img2" %>
+      <div class="tweet">
+          <!--<li><a href="/products/new">投稿する</a></li>-->
+          
+            <% if user_signed_in? %>
+            <div class="header_user">
+              <a href="/users/<%= current_user.id %>">
+                <p class="login_name">ログインユーザー:<%= current_user.nickname %></p>
+                <%= image_tag current_user.image %>
+              </a>
+            </div>
+            <% end %>
+            
+            <ul class="tweet_list">
+                <li><a class="top" href="/">TOP</a></li>
+                <li><a class="top_search" href="/products/search">ラーメンを探す</a></li>
+              <% if user_signed_in? %>
+                <li><a class="top_my" href="/users/<%= current_user.id %>">マイページ</a></li>
+                <li><%= link_to "ログアウト", "/users/sign_out", method: :delete, class: "logauto" %></li>
+              <% end %>
+            </ul>
+      </div>
+    </div>
+    
+    <div class="body">
+      
+        <%= yield %>
+      
+    </div>
+    
+    <div class="footer">
+      <p>©Copyright2019 SHIBATA.</p>
+    </div>
+    
+  </body>
+</html>
