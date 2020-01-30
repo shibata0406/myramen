@@ -19,10 +19,8 @@
           
             <% if user_signed_in? %>
             <div class="header_user">
-              <a href="/users/<%= current_user.id %>">
-                <p class="login_name">ログインユーザー:<%= current_user.nickname %></p>
-                <%= image_tag current_user.image %>
-              </a>
+              <p><%= link_to "#{current_user.nickname}", "/users/#{current_user.id}", data: {"turbolinks" => false}, class:"login_name" %></p>
+              <span class="login_name"><%= image_tag current_user.image %></span>
             </div>
             <% end %>
             
