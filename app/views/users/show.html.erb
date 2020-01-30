@@ -1,22 +1,45 @@
-<div class="user_container">
-  <div class="user_shows_contents">
-    <div class="user_shows_header">
-      <h2 class="my_reviews_title">過去のレビュー</h2>
+<div class="user-menu">
+  <ul class="tab-menu">
+    <li id="left" class="selected">過去のレビュー</li>
+    <li id="right">お気に入り</li>
+  </ul>
+  
+  <div class="contents">
+    <div class="left">
+      <div class="user_shows_box">
+        <% current_user.reviews.each do |review| %>
+          <ul class="user_show_box">
+            <li class="user_show_header">
+              <%= review.product.title %>
+            </li>
+            <li>
+              <%= image_tag review.product.image_url, class: "user_show_image" %>
+            </li>
+            <li class="user_show_review">
+              <%= review.review %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
     </div>
-    <div class="user_shows_box">
-      <% current_user.reviews.each do |review| %>
-        <ul class="user_show_box">
-          <li class="user_show_header">
-            <%= review.product.title %>
-          </li>
-          <li>
-            <%= image_tag review.product.image_url, class: "user_show_image" %>
-          </li>
-          <li class="user_show_review">
-            <%= review.review %>
-          </li>
-        </ul>
-      <% end %>
+    
+    <div class="right">
+      <div class="user_shows_box">
+        <% current_user.favorites.each do |favorite| %>
+          <ul class="user_show_box">
+            <li class="user_show_header">
+              <%= favorite.product.title %>
+            </li>
+            <li>
+              <%= image_tag favorite.product.image_url, class: "user_show_image" %>
+            </li>
+            <li class="user_show_review">
+              <span>いいね数：<%= favorite.product.favorites.count %></span>
+            </li>
+          </ul>
+        <% end %>
+      </div>
     </div>
+
   </div>
 </div>

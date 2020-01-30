@@ -89,6 +89,9 @@ font-family: "genshin";
 }
 
 
+/*トップページヘッダー*/
+
+
 .tweet_list {
   display: flex;
   position: absolute;  /*隣のアイコンが邪魔になるので、絶対値で位置を決める*/
@@ -141,7 +144,7 @@ font-family: "genshin";
 
 
 
-
+/*トップページメイン*/
 
 
 .review_container {
@@ -224,10 +227,11 @@ font-family: "genshin";
 
 
 
-
+/*ランキング*/
 
 
 .ranking_body {
+  height: 100%;
   background: white;
   margin: 20px auto;
   padding: 10px;
@@ -269,7 +273,7 @@ font-family: "genshin";
 
 
 
-
+/*商品詳細ページ*/
 
 
 .show_contents {
@@ -288,6 +292,34 @@ font-family: "genshin";
   width: 100%;
   height: 50%;
 }
+
+
+
+/*お気に入り*/
+
+.favorite_ajax {
+  height: 7%;
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  line-height: 30px;
+}
+
+.unlike:hover {
+  font-size: 22px;
+}
+.unlike {
+  color: gray;
+}
+.like {
+  color: red;
+}
+.like:hover {
+  font-size: 25px;
+}
+
+
+/*詳細ページ*/
 
 .show_title {
   font-size: 25px;
@@ -318,11 +350,14 @@ font-family: "genshin";
 .show_index {
   background: white;
   height: 50%;
+  padding-top: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .product_address {
   height: 8%;
-  font-size: 18px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,11 +386,7 @@ font-family: "genshin";
 }
 
 .btn-square:hover {
-  font-size: 101%;
-}
-
-.show_index {
-  padding: 0 15px;
+  font-size: 102%;
 }
 
 .show_index_header {
@@ -364,6 +395,14 @@ font-family: "genshin";
   align-items: center;
   font-size: 20px;
   border-bottom: 1px solid;
+}
+
+.show_index_new {
+  background: white;
+  height: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: -50px;
 }
 
 .reviews_index {
@@ -384,7 +423,7 @@ font-family: "genshin";
 
 
 
-
+/*検索ページ*/
 
 .search_header {
   display: flex;
@@ -425,7 +464,7 @@ font-family: "genshin";
 
 
 
-
+/*レビューページ*/
 
 
 .review_form {
@@ -481,23 +520,44 @@ font-family: "genshin";
 
 
 
+/*ユーザーページ*/
 
-
-.user_container {
+.user-menu {
   width: 80%;
-  margin: 10px auto;
-  background: white;
-  padding: 20px;
+  margin: 15px auto 10px;
+  padding: 10px;
 }
 
-.user_shows_contents {
-  width: 100%;
-  margin: 0 auto;
+.tab-menu li {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #DDDDDD;
+  border-top-right-radius: 10px;
+  font-size: 10px;
+  color: #fff;
+  font-weight: bolder;
+  text-align: center;
 }
 
-.my_reviews_title {
+#left {
+  font-size: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#right {
+  padding-left: 10px;
+  padding-right: 10px;
   font-size: 30px;
   margin-left: 10px;
+}
+
+.tab-menu li.selected {
+  background-color: white;
+  color: black;
+}
+
+.contents .right {
+  display: none;
 }
 
 .user_shows_box {
@@ -522,7 +582,7 @@ font-family: "genshin";
 }
 
 .user_show_review {
-  background: #DDDDDD;
+  background: #EEEEEE;
   height: 40px;
   line-height: 40px;
 }
@@ -536,7 +596,7 @@ font-family: "genshin";
 
 
 
-
+/*ログイン*/
 
 .login_container {
   background: white;
@@ -563,7 +623,7 @@ font-family: "genshin";
 }
 
 .sign_up_header {
-  height: 20%;
+  height: 10%;
 }
 
 .sign_up_main {

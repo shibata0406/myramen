@@ -30,7 +30,8 @@
                 <li><a class="top" href="/">TOP</a></li>
                 <li><a class="top_search" href="/products/search">ラーメンを探す</a></li>
               <% if user_signed_in? %>
-                <li><a class="top_my" href="/users/<%= current_user.id %>">マイページ</a></li>
+                <li><%= link_to "マイページ", "/users/#{current_user.id}", data: {"turbolinks" => false}, class: "top_my" %></li>
+                
                 <li><%= link_to "ログアウト", "/users/sign_out", method: :delete, class: "logauto" %></li>
               <% end %>
             </ul>

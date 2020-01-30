@@ -11,9 +11,15 @@
     <div class="product_address">
       <%= @product.address %>
     </div>
+    
+    <div class="favorite_ajax">
+      <%= render partial: "favorite", locals: {product: @product} %>
+    </div>
+    
     <div class="review_new">
       <a href="/products/<%= @product.id %>/reviews/new" class="btn-square">このラーメンを評価する</a>
     </div>
+
   </div>
   
   <div class="show_index">
@@ -24,7 +30,7 @@
       <% @product.reviews.each do |review| %>
         <ul class="review_index">
           <li><%= review.user.nickname %></li>
-          <p><%= review.review %></p>
+          <li><%= review.review %></li>
           
         </ul>
       <% end %>

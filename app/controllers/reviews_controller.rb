@@ -8,8 +8,9 @@ class ReviewsController < RankingController
   end
   
   def create
+    @product = Product.find(params[:product_id])
     Review.create(review_params)
-    redirect_to controller: :products, action: :index
+    redirect_to product_path(@product)
   end
   
   private

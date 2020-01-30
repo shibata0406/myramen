@@ -11,4 +11,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  
+  post 'favorites' => "favorites#create"
+  delete 'favorites' => "favorites#destroy"
 end

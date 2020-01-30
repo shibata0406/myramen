@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+  <% unless @product.favorites.exists?(user_id: current_user.id) %>
+    <div class="like">
+      <%= form_with url: favorites_path do |f| %>
+        <%= f.hidden_field :product_id, value: @product.id %>
+        <%= f.submit "♡お気に入りする️" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="unlike">
+      <%= form_with url: "/favorites", method: :delete do |f| %>
+        <%= f.hidden_field :product_id, value: @product.id %>
+        <%= f.submit "♡お気に入り解除" %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
