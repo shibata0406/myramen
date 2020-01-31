@@ -441,7 +441,7 @@ font-family: "genshin";
 }
 
 .search_contents {
-  width: 70%;
+  width: 75%;
   margin: 20px auto;
 }
 
@@ -531,11 +531,10 @@ font-family: "genshin";
 .tab-menu li {
   display: inline-block;
   cursor: pointer;
-  background-color: #DDDDDD;
+  background-color: #AECD6A;
   border-top-right-radius: 10px;
   font-size: 10px;
   color: #fff;
-  font-weight: bolder;
   text-align: center;
 }
 
@@ -552,8 +551,8 @@ font-family: "genshin";
 }
 
 .tab-menu li.selected {
-  background-color: white;
-  color: black;
+  background-color: #fff;
+  color: #AECD6A;
 }
 
 .contents .right {
@@ -582,7 +581,7 @@ font-family: "genshin";
 }
 
 .user_show_review {
-  background: #EEEEEE;
+  background: #DDDDDD;
   height: 40px;
   line-height: 40px;
 }

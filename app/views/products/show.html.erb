@@ -5,6 +5,7 @@
     </div>
     <div class="show_product_box">
       <div class="show_thumbnail">
+        
        <%= image_tag("#{@product.image_url}") %>
       </div>
     </div>
@@ -19,7 +20,6 @@
     <div class="review_new">
       <a href="/products/<%= @product.id %>/reviews/new" class="btn-square">このラーメンを評価する</a>
     </div>
-
   </div>
   
   <div class="show_index">
