@@ -13,7 +13,11 @@
               <%= review.product.title %>
             </li>
             <li>
-              <%= image_tag review.product.image_url, class: "user_show_image" %>
+               <% if review.product.image_url == nil %>
+                 <%= image_tag review.product.image, class: "user_show_image" %>
+               <% else %>
+                 <%= image_tag review.product.image_url, class: "user_show_image" %>
+               <% end %>
             </li>
             <li class="user_show_review">
               <%= review.review %>

@@ -8,7 +8,6 @@ class ProductsController < RankingController
   
   def show
     @product = Product.find(params[:id])
-    
   end
   
   def search
@@ -16,7 +15,6 @@ class ProductsController < RankingController
   
   def search_show
     @products = Product.where("title LIKE(?)", "%#{params[:keyword]}%").limit(20)
-    @tweeted_products = Product.where(image_url: nil)
   end
   
   def new

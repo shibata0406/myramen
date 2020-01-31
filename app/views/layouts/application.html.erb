@@ -15,24 +15,22 @@
       <a class="title" href="/">俺のラーメン</a>
       <%= image_tag ("7605.png"), class: "ramen_img2" %>
       <div class="tweet">
-          
-            <% if user_signed_in? %>
-              <div class="header_user">
-                <p><%= link_to "#{current_user.nickname}", "/users/#{current_user.id}", data: {"turbolinks" => false}, class:"login_name" %></p>
-                <span class="login_name"><%= image_tag current_user.image %></span>
-              </div>
-            <% end %>
+        <% if user_signed_in? %>
+          <div class="header_user">
+            <p><%= link_to "#{current_user.nickname}", "/users/#{current_user.id}", data: {"turbolinks" => false}, class:"login_name" %></p>
+            <span class="login_name"><%= image_tag current_user.image %></span>
+          </div>
+        <% end %>
+        <ul class="tweet_list">
+            <li><a class="top" href="/">TOP</a></li>
+            <li><a href="/products/new">投稿する</a></li>
+            <li><a class="top_search" href="/products/search">ラーメンを探す</a></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "マイページ", "/users/#{current_user.id}", data: {"turbolinks" => false}, class: "top_my" %></li>
             
-            <ul class="tweet_list">
-                <li><a class="top" href="/">TOP</a></li>
-                <li><a href="/products/new">投稿する</a></li>
-                <li><a class="top_search" href="/products/search">ラーメンを探す</a></li>
-              <% if user_signed_in? %>
-                <li><%= link_to "マイページ", "/users/#{current_user.id}", data: {"turbolinks" => false}, class: "top_my" %></li>
-                
-                <li><%= link_to "ログアウト", "/users/sign_out", method: :delete, class: "logauto" %></li>
-              <% end %>
-            </ul>
+            <li><%= link_to "ログアウト", "/users/sign_out", method: :delete, class: "logauto" %></li>
+          <% end %>
+        </ul>
       </div>
     </div>
     
