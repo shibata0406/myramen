@@ -7,7 +7,13 @@
       <% @products.each do |product| %>
         <div class="product_box">
           <a href="/products/<%= product.id %>">
-            <div class="thumbnail"><%= image_tag product.image_url %></div>
+            <div class="thumbnail">
+              <% if product.image_url == nil %>
+                <%= image_tag product.image %>
+              <% else %>
+                <%= image_tag product.image_url %>
+              <% end %>
+            </div>
             <div class="product_title"><p><%= product.title %></p></div>
           </a>
         </div>

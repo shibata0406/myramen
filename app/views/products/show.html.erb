@@ -5,8 +5,11 @@
     </div>
     <div class="show_product_box">
       <div class="show_thumbnail">
-        
-       <%= image_tag("#{@product.image_url}") %>
+       <% if @product.image_url == nil %>
+         <%= image_tag @product.image %>
+       <% else %>
+         <%= image_tag @product.image_url %>
+       <% end %>
       </div>
     </div>
     <div class="product_address">

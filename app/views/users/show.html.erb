@@ -31,7 +31,11 @@
               <%= favorite.product.title %>
             </li>
             <li>
-              <%= image_tag favorite.product.image_url, class: "user_show_image" %>
+              <% if favorite.product.image_url == nil %>
+                <%= image_tag favorite.product.image, class: "user_show_image" %>
+              <% else %>
+                <%= image_tag favorite.product.image_url, class: "user_show_image" %>
+              <% end %>
             </li>
             <li class="user_show_review">
               <span>いいね数：<%= favorite.product.favorites.count %></span>
