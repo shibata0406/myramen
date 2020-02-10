@@ -26,16 +26,23 @@
   </div>
   
   <div class="show_index">
-    <div class="show_index_header">
-     <h4>【みなさんの評価一覧】</h4>
-    </div>
-    <div class="reviews_index">
-      <% @product.reviews.each do |review| %>
-        <ul class="review_index">
-          <li><%= review.user.nickname %></li>
-          <li><%= review.review %></li>
-        </ul>
-      <% end %>
+    <h4 class="show_index_header">【みなさんの評価一覧】</h4>
+    <div class="reviews_show_index">
+      <div class="reviews_index">
+        <% @product.reviews.each do |review| %>
+          <li class="review_index">
+            <%= link_to review.user.nickname, user_path(review.user), data: {"turbolinks" => false} %>：<%= review.review %>
+          </li>
+        <% end %>
+      </div>
+      <div class="texts_index">
+        <% if @product.text.present? %>
+          <h4 class="text_index_header">【投稿者の感想】</h4>
+          <li class="text_index">
+            <%= link_to @product.user.nickname, user_path(@product.user), data: {"turbolinks" => false} %>：<%= @product.text %>
+          </li>
+        <% end %>
+      </div>
     </div>
   </div>
   

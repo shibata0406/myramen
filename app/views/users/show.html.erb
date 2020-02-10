@@ -1,53 +1,71 @@
 <div class="user-menu">
-  <ul class="tab-menu">
-    <li id="left" class="selected">過去のレビュー</li>
-    <li id="right">お気に入り</li>
-  </ul>
-  
-  <div class="contents">
-    <div class="left">
-      <div class="user_shows_box">
-        <% current_user.reviews.each do |review| %>
-          <ul class="user_show_box">
-            <li class="user_show_header">
-              <%= review.product.title %>
-            </li>
-            <li>
-               <% if review.product.image_url == nil %>
-                 <%= image_tag review.product.image, class: "user_show_image" %>
-               <% else %>
-                 <%= image_tag review.product.image_url, class: "user_show_image" %>
-               <% end %>
-            </li>
-            <li class="user_show_review">
-              <%= review.review %>
-            </li>
-          </ul>
-        <% end %>
-      </div>
+  <div class="user_menu_header">
+    <h2><%= @user.nickname %> さんのページ</h2>
+    <div class="follow_ajax">
+      <%= render partial: "follow_button", locals: { user: @user } %>
     </div>
-    
-    <div class="right">
-      <div class="user_shows_box">
-        <% current_user.favorites.each do |favorite| %>
-          <ul class="user_show_box">
-            <li class="user_show_header">
-              <%= favorite.product.title %>
-            </li>
-            <li>
-              <% if favorite.product.image_url == nil %>
-                <%= image_tag favorite.product.image, class: "user_show_image" %>
-              <% else %>
-                <%= image_tag favorite.product.image_url, class: "user_show_image" %>
-              <% end %>
-            </li>
-            <li class="user_show_review">
-              <span>いいね数：<%= favorite.product.favorites.count %></span>
-            </li>
-          </ul>
-        <% end %>
-      </div>
-    </div>
-
   </div>
+  
+  <% if @user.reviews.present? or @user.favorites.present? %>
+    <ul class="tab-menu">
+      <li id="left" class="selected">過去のレビュー</li>
+      <li id="right">お気に入り</li>
+    </ul>
+    
+    <div class="contents">
+      <div class="left">
+        <div class="user_shows_box">
+          <% @user.reviews.each do |review| %>
+            <div class="user_show_box">
+              <%= link_to product_path(review.product_id) do %>
+                <div class="user_show_header">
+                  <%= review.product.title %>
+                </div>
+                <div>
+                   <% if review.product.image_url == nil %>
+                     <%= image_tag review.product.image, class: "user_show_image" %>
+                   <% else %>
+                     <%= image_tag review.product.image_url, class: "user_show_image" %>
+                   <% end %>
+                </div>
+                <div class="user_show_review">
+                  <%= review.review %>
+                </div>
+              <% end %>
+            </div>
+            <% if review.user_id == current_user.id %>
+              <ul class="more_list">
+                <li><%= link_to "削除する", product_review_path(review.product, review), method: :delete, data: { confirm: '削除しますか？' } %></li>
+                <li><%= link_to "編集する", edit_product_review_path(review.product, review), method: :get %></li>
+              </ul>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="right">
+        <div class="user_shows_box">
+          <% @user.favorites.each do |favorite| %>
+            <div class="user_show_box">
+              <%= link_to product_path(favorite.product) do %>
+                <div class="user_show_header">
+                  <%= favorite.product.title %>
+                </div>
+                <div>
+                  <% if favorite.product.image_url == nil %>
+                    <%= image_tag favorite.product.image, class: "user_show_image" %>
+                  <% else %>
+                    <%= image_tag favorite.product.image_url, class: "user_show_image" %>
+                  <% end %>
+                </div>
+                <div class="user_show_review">
+                  <span>いいね数：<%= favorite.product.favorites.count %></span>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

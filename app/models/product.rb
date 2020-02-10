@@ -1,7 +1,9 @@
 class Product < ApplicationRecord
 
-  has_many :reviews
-  has_many :users, through: :favorites
-  has_many :favorites
+  has_many :reviews, dependent: :destroy
+  has_many :fav_users, through: :favorites
+  has_many :favorites, dependent: :destroy
+  belongs_to :user
+  
   has_one_attached :image
 end

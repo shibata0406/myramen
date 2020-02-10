@@ -5,16 +5,15 @@ Rails.application.routes.draw do
   root 'products#index'
   
   resources :users, only: :show
-  resources :products, only: [:index, :show, :new, :create] do
-    resources :reviews, only: [:new, :create,]
+  resources :relationships, only: [:create, :destroy]
+  resources :products, only: [:index, :show, :new, :create, :destroy] do
+    resources :reviews, only: [:new, :create, :destroy, :edit, :update]
     collection do
       get 'search'
-    end
-    collection do
       get 'search_show'
     end
+    
   end
+  resources :favorites, only: [:create, :destroy]
   
-  post 'favorites' => "favorites#create"
-  delete 'favorites' => "favorites#destroy"
 end

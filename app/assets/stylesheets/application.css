@@ -405,9 +405,30 @@ font-family: "genshin";
   margin-top: -50px;
 }
 
-.reviews_index {
+.reviews_show_index {
   height: 85%;
   margin-top: 15px;
+}
+
+.reviews_index {
+  height: 70%;
+}
+
+.texts_index {
+  height: 30%;
+}
+
+.text_index_header {
+  height: 30%;
+  border-bottom: 1px solid;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.text_index {
+  height: 20%;
+  padding-top: 10px;
 }
 
 .review_index {
@@ -523,9 +544,11 @@ font-family: "genshin";
 /*ユーザーページ*/
 
 .user-menu {
+  height: 100%;
   width: 80%;
   margin: 15px auto 10px;
   padding: 10px;
+
 }
 
 .tab-menu li {
@@ -555,23 +578,43 @@ font-family: "genshin";
   color: #AECD6A;
 }
 
+.contents {
+  background: white;
+  height: 100%;
+  overflow: scroll;
+}
+
 .contents .right {
   display: none;
 }
 
+.left {
+  height: 100%;
+}
+
+.right {
+  height: 100%;
+}
+
 .user_shows_box {
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  background: white;
 }
 
 .user_show_box {
+  height: 47%;
   text-align: center;
   box-shadow: gray 1px 1px 10px;
   margin: 8px auto;
   overflow: hidden;
   width: 320px;
   background: white;
+}
+
+.user_show_box:hover {
+  border: 1.5px solid silver;
+  box-sizing: border-box;
 }
 
 .user_show_image {
@@ -582,14 +625,20 @@ font-family: "genshin";
 
 .user_show_review {
   background: #DDDDDD;
-  height: 40px;
-  line-height: 40px;
+  height: 12%;
+  line-height: 30px;
+  color: black;
 }
 
 .user_show_header {
   font-family: "genshin";
+  color: black;
+  height: 10%;
 }
 
+.lets_review {
+  text-align: center;
+}
 
 
 
