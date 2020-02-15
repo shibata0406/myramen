@@ -15,6 +15,16 @@
   src: url("GenShinGothic-Bold.ttf") format("truetype");
 }
 
+.flash {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background: #00AA00;
+  height: 25px;
+  line-height: 25px;
+  margin-bottom: -10px;
+}
+
 .product_title p {
 font-family: "genshin";
 }
@@ -152,6 +162,8 @@ font-family: "genshin";
   display: flex;        /*ここでcontainerの下のindex_contentsとranking_bodyを横並びに*/
   margin: 10px auto;
   background: white;
+  box-shadow: 2px 2px 15px silver;
+  border-radius: 3px;
 }
 
 .index_contents {
@@ -245,7 +257,6 @@ font-family: "genshin";
 }
 
 .ranking_box:hover {
-  
   padding: 2px;
 }
 
@@ -267,8 +278,54 @@ font-family: "genshin";
 
 
 
+/*ツイートページ*/
 
+.contents_row {
+  width: 75%;
+  margin: 20px auto;
+}
 
+.tweet_header{
+  font-size: 30px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.new_container{
+  margin-left: 15px;
+}
+
+.new_container li{
+  margin-top: 10px;
+}
+
+.tweet_form{
+  padding: 0.8em;
+  outline: none;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.tweet_form:hover{
+  border: 1px solid #3498db;
+}
+
+.tweet_button{
+  text-align: center;
+  font-size: 20px;
+  width: 20%;
+  margin-top: 10px;
+  padding: 0.2em 0.5em;
+  background: #668ad8;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+
+.tweet_button:hover{
+  border: 2px solid silver;
+}
 
 
 
@@ -319,7 +376,7 @@ font-family: "genshin";
 }
 
 
-/*詳細ページ*/
+/*ラーメン詳細ページ*/
 
 .show_title {
   font-size: 25px;
@@ -369,6 +426,10 @@ font-family: "genshin";
   font-size: 23px;
   display: flex;
   justify-content: center;
+}
+
+.btn-square:hover{
+  border: 1px solid silver;
 }
 
 .btn-square {
@@ -535,7 +596,9 @@ font-family: "genshin";
   width: 100%;
 }
 
-
+.review_button:hover{
+  border: 2px solid silver;
+}
 
 
 
@@ -547,7 +610,7 @@ font-family: "genshin";
 .user-menu {
   height: 100%;
   width: 80%;
-  margin: 15px auto 10px;
+  margin: 5px auto 10px;
   padding: 10px;
 
 }
@@ -641,6 +704,101 @@ font-family: "genshin";
   text-align: center;
 }
 
+.user_menu_header{
+  height: 7%;
+  display: flex;
+}
+
+.follow_ajax{
+  margin: 3px 10px;
+  height: 30px;
+  line-height: 30px;
+  width:12%;
+  font-size:17px;
+  text-align-last: center;
+}
+
+.follow_ajax .follow{
+  border-radius:15px;
+  color:#fff;
+  text-align-last: center;
+  background:#55acee;
+}
+
+.follow_ajax .unfollow{
+  border-radius:15px;
+  color:#55acee;
+  text-align-last: center;
+  background:white;
+  border: 2px solid #55acee;
+}
+
+
+
+
+/*フォローユーザーページ*/
+
+.followings{
+  height: 100%;
+  width: 80%;
+  margin: 15px auto 10px;
+  padding: 10px;
+}
+
+.followings_header{
+  line-height: 45px;
+  height: 8%;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fff;
+  display: inline-block;
+  border-top-right-radius: 10px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.followings_body{
+  flex-wrap: wrap;
+  display: flex;
+  background: white;
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+.following_user{
+  padding: 3px;
+  height: 38%;
+  text-align: center;
+  margin: 10px auto;
+  overflow: hidden;
+  width: 20%;
+}
+
+
+.following_image {
+  height: 86%;
+  width: 75%;
+  margin: auto;
+}
+
+.following_name {
+  padding: 3px;
+  height: 14%;
+  line-height: 35px;
+  font-size: 20px;
+}
+
+.following_image img {
+  box-shadow: grey 0px 5px 8px;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.following_image img:hover {
+  padding: 3px;
+}
 
 
 

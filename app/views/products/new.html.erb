@@ -1,25 +1,23 @@
 <div class="contents_row">
-  <div class="new_container">
-    <h3>投稿する</h3>
-    <%= form_with(model: @product) do |f| %>
-      <li>
-        <%= f.label :title, "店名" %>
-        <%= f.text_field :title, class: "tweet_form", placeholder: "店名" %>
-      </li>
-      <li>
-        <%= f.label :address, "住所" %>
-        <%= f.text_field :address, class: "tweet_form", placeholder: "住所" %>
-      </li>
-      <li>
-        <%= f.text_area :text, class: "tweet_form", placeholder: "レビューを書いてね", size: "50 * 100" %>
-      </li>
-      <li>
-        <%= f.label :image, "画像" %>
-        <%= f.file_field :image, class: "tweet_form" %>
-      </li>
-        <div class="tweet_button">
-          <%= f.submit "送信" %>
-        </div>
-    <% end %>
-  </div>
+    <h2 class="tweet_header">投稿する</h2>
+    <ul class="new_container">
+      <%= form_with(model: @product) do |f| %>
+        <li>
+          <%= f.text_field :title, class: "tweet_form", placeholder: "店名" %>
+        </li>
+        <li>
+          <%= f.text_field :address, class: "tweet_form", placeholder: "住所" %>
+        </li>
+        <li>
+          <%= f.text_area :text, class: "tweet_form", placeholder: "レビューを書いてね", size: "50 * 150" %>
+        </li>
+        <li>
+          <%= f.file_field :image, class: "tweet_form" %>
+        </li>
+          <div class="tweet_button">
+            <%= f.submit "送信", class: "review_button_submit" %>
+          </div>
+      <% end %>
+    </ul>
+
 </div>

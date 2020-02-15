@@ -4,7 +4,12 @@ Rails.application.routes.draw do
   
   root 'products#index'
   
-  resources :users, only: :show
+  resources :users, only: :show do
+    member do
+      get 'followings'
+      get 'followers'
+    end
+  end
   resources :relationships, only: [:create, :destroy]
   resources :products, only: [:index, :show, :new, :create, :destroy] do
     resources :reviews, only: [:new, :create, :destroy, :edit, :update]

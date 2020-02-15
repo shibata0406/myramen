@@ -1,3 +1,13 @@
+<% if flash[:notice] %>
+  <p class="flash"><%= flash[:notice] %></p>
+<% end %>
+
+<script>
+  $(function() {
+    setTimeout("$('.flash').fadeOut('slow')", 3000);
+  });
+</script>
+
 <div class="user-menu">
   <div class="user_menu_header">
     <h2><%= @user.nickname %> さんのページ</h2>
@@ -5,7 +15,9 @@
       <%= render partial: "follow_button", locals: { user: @user } %>
     </div>
   </div>
-  
+    <span><%= link_to "フォロー#{@user.followings.count}", followings_user_path(@user) %></span>
+    <span class="follower_count"><%= link_to "フォロワー#{@user.followers.count}", followers_user_path(@user) %></span>
+
   <% if @user.reviews.present? or @user.favorites.present? %>
     <ul class="tab-menu">
       <li id="left" class="selected">過去のレビュー</li>
@@ -33,7 +45,7 @@
                 </div>
               <% end %>
             </div>
-            <% if review.user_id == current_user.id %>
+            <% if user_signed_in? && review.user_id == current_user.id %>
               <ul class="more_list">
                 <li><%= link_to "削除する", product_review_path(review.product, review), method: :delete, data: { confirm: '削除しますか？' } %></li>
                 <li><%= link_to "編集する", edit_product_review_path(review.product, review), method: :get %></li>

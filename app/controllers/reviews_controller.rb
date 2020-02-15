@@ -16,17 +16,23 @@ class ReviewsController < RankingController
   def destroy
     review = Review.find(params[:id])
     review.destroy
-    redirect_to root_path, notice:"ブログを編集しました！"
+    if review.destroy
+       redirect_to root_path, notice:"︎レビューを削除しました！"
+    end
   end
   
   def edit
     @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
+    
   end
   
   def update
     review = Review.find(params[:id])
     review.update(update_params)
+      if review.update(update_params)
+       redirect_to user_path(current_user), notice:"️レビューを編集しました！"
+      end
   end
   
   private
