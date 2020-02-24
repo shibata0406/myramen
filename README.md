@@ -34,6 +34,7 @@ https://lit-lake-48428.herokuapp.com/
 ・MySQL(管理ソフト Sequel Pro)  
 
 ## 使い方・デモ
+![トップページ](https://user-images.githubusercontent.com/58875067/75131910-4d8ae000-5718-11ea-8532-30b2b7a2ffa2.png)
 
 
 ## こだわり
