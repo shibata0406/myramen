@@ -1,7 +1,7 @@
 # 俺のラーメン
 
 ## App URL
-https://lit-lake-48428.herokuapp.com/
+https://myramen.herokuapp.com/
 
 ## アプリの概要
 ラーメン好きのラーメン好きによるラーメン好きの為のラーメンサイトです。
