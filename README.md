@@ -1,12 +1,9 @@
-# README
-
-#ツールの説明
-
-あああああ
-
-#説明
-
-説明
+# アプリ名
+# 説明（何が出来る物なのか）
+# 使い方
+# 構築やインストール方法
+# ライセンス
+# 作者
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
