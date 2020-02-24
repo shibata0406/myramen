@@ -7,47 +7,46 @@ https://lit-lake-48428.herokuapp.com/
 ラーメン好きのラーメン好きによるラーメン好きの為のラーメンサイトです。
 
 ## アプリの説明
-主に
-①利用者のお気に入りラーメン(画像・住所・コメント)を投稿
-②他者の投稿へのいいね、コメント
-③お気に入りユーザーのフォロー
-④気になるラーメンを検索・コメント・お気に入り・評価
+主に<br>
+①利用者のお気に入りラーメン(画像・住所・コメント)を投稿<br>
+②他者の投稿へのいいね、コメント<br>
+③お気に入りユーザーのフォロー<br>
+④気になるラーメンを検索・コメント・お気に入り・評価<br>
 ⑤画像による飯テロ
 
-## 機能一覧
-・投稿(画像・住所・レビュー)
-・検索
-・ログイン
-・ランキング
-・ページネーション
+## 機能(技術)一覧
+・投稿機能<br>
+・スクレイピング<br>
+・検索<br>
+・ログイン、ログアウト(devise)<br>
+・ランキング<br>
+・ページネーション(kaminari)<br>
+・画像アップロード(Active Storage、Mini Magick)<br>
+・コメント・評価<br>
+・フラッシュメッセージ<br>
+・お気に入り登録、解除(jQuery,Ajax)<br>
+・フォローフォロワー(jQuery,Ajax)<br>
+・タブメニュー(jQuery)<br>
+・ドロップメニューで削除、編集を表示(jQuery)<br><br>
 
-・ログイン(devise)
+・Amazon S3  
+・インフラ heroku使用  
+・MySQL(管理ソフト Sequel Pro)  
 
 ## 使い方・デモ
+
+
 ## こだわり
-## ライセンス
-## 作者
+非ログイン時にどこまでアプリを使用できるか。  
+→トップページのラーメンや、ユーザーページの閲覧は可。投稿や検索、フォロー、お気に入り等はログイン必須にしました。  
+またなんのサイトかぱっと見わかり易いよう、トップページにはラーメンの一覧を表示。  
+ユーザー層を考え、サイトのお洒落さよりも、わかりやすさを重視しました。  
+
 ## 使用言語
+Ruby, Ruby on Rails, HTML, CSS, JavaScript, jQuery, MySQL  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## バージョン
+rails ~> 5.2.1  
+ruby ~> 2.5.1  
+gem ~> 3.0.6  
