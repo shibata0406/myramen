@@ -1,10 +1,9 @@
 # 俺のラーメン
+![トップページ](https://user-images.githubusercontent.com/58875067/75131910-4d8ae000-5718-11ea-8532-30b2b7a2ffa2.png)
+ラーメン好きのラーメン好きによるラーメン好きの為のラーメンサイトです。
 
 ## App URL
 https://myramen.herokuapp.com/
-
-## アプリの概要
-ラーメン好きのラーメン好きによるラーメン好きの為のラーメンサイトです。
 
 ## アプリの説明
 主に<br>
@@ -15,6 +14,7 @@ https://myramen.herokuapp.com/
 ⑤画像による飯テロ
 
 ## 機能(技術)一覧
+### ①バックエンド
 ・投稿機能<br>
 ・スクレイピング<br>
 ・検索<br>
@@ -24,13 +24,15 @@ https://myramen.herokuapp.com/
 ・画像アップロード(Active Storage、Mini Magick)<br>
 ・コメント・評価<br>
 ・フラッシュメッセージ<br>
+### ②フロントエンド
 ・お気に入り登録、解除(jQuery,Ajax)<br>
 ・フォローフォロワー(jQuery,Ajax)<br>
 ・タブメニュー(jQuery)<br>
 ・ドロップメニューで削除、編集を表示(jQuery)<br><br>
 
+### ③インフラ
 ・Amazon S3  
-・インフラ heroku使用  
+・heroku  
 ・MySQL(管理ソフト Sequel Pro)  
 
 ## 使い方・デモ
@@ -43,22 +45,22 @@ https://myramen.herokuapp.com/
 ### ②ラーメン詳細
 気になるラーメンをクリックすると、この画面に移行します。
 
-![トップページ](https://user-images.githubusercontent.com/58875067/75137124-16252f00-572a-11ea-9be1-6e74a11a6d30.png)
+![詳細画面](https://user-images.githubusercontent.com/58875067/75137124-16252f00-572a-11ea-9be1-6e74a11a6d30.png)
 - - -  
 ### ③コメント評価の投稿
 ラーメン詳細ページから「このラーメンを評価する」で評価画面へ移行。
 
-![トップページ](https://user-images.githubusercontent.com/58875067/75137033-cf373980-5729-11ea-93f7-07b7cadbc15b.png)
+![新規コメント画面](https://user-images.githubusercontent.com/58875067/75137033-cf373980-5729-11ea-93f7-07b7cadbc15b.png)
 - - -  
 ### ④ラーメン検索画面
 検索窓にキーワードを打ち込み、当てはまるラーメンを表示します。
 
-![トップページ](https://user-images.githubusercontent.com/58875067/75137342-b3806300-572a-11ea-8430-37789552864e.png)
+![検索ページ](https://user-images.githubusercontent.com/58875067/75137342-b3806300-572a-11ea-8430-37789552864e.png)
 - - -  
 ### ⑤ユーザー画面(計5画面)
 ユーザーの過去のレビューやお気に入り、フォロー・フォロワー、ユーザー情報の編集画面です。
 
-![トップページ](https://user-images.githubusercontent.com/58875067/75136715-de69b780-5728-11ea-9345-e13bd74a60c7.png)
+![ユーザーページ](https://user-images.githubusercontent.com/58875067/75136715-de69b780-5728-11ea-9345-e13bd74a60c7.png)
 - - -  
 ## こだわり
 非ログイン時にどこまでアプリを使用できるか。  
@@ -67,7 +69,7 @@ https://myramen.herokuapp.com/
 ユーザー層を考え、サイトのお洒落さよりも、わかりやすさを重視しました。
 
 ## なぜ作ったのか
-ラーメンが大好きだからです。  
+ラーメンが大好きだから。  
 今まで学んだ技術のアウトプットとして、自分でワクワクしながら作れるサイトを目指しました。
 
 ## 使用言語
