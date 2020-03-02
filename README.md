@@ -24,6 +24,7 @@ https://myramen.herokuapp.com/
 ・画像アップロード(Active Storage、Mini Magick)<br>
 ・コメント・評価<br>
 ・フラッシュメッセージ<br>
+・Faker(faker 2.8)  
 ### ②フロントエンド
 ・お気に入り登録、解除(jQuery,Ajax)<br>
 ・フォローフォロワー(jQuery,Ajax)<br>
