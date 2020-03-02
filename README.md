@@ -29,7 +29,6 @@ https://myramen.herokuapp.com/
 ・フォローフォロワー(jQuery,Ajax)<br>
 ・タブメニュー(jQuery)<br>
 ・ドロップメニューで削除、編集を表示(jQuery)<br><br>
-
 ### ③インフラ
 ・Amazon S3  
 ・heroku  
